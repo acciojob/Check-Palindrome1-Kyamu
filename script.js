@@ -2,35 +2,18 @@
 
 function palindrome(str){
 
-	 var l=str.length;
-		  var start=0;
-		  var end=l-1;
-		  char arr[]=new char[l];
-		  for(var i=0;i<l;i++)
-			  {
-				  arr[i]=str.charAt(i);
-				  if(arr[i]>='A' && arr[i]<='Z')
-				  {
-					  arr[i]=(char)(arr[i]+32);
-				  }
-			  }
-		  while(start<end)
-			  {
-				  while(start<end && (arr[start]<'a' || arr[end]>'z'))
-					  {
-						  start++;
-					  }
-				  while(start<end && (arr[end]<'a' || arr[start]>'z'))
-					  {
-						  end--;
-					  }
-				  if(start<end && arr[start]!=arr[end])
-				  {
-					  return false;
-				  }
-				  start=start+1;
-				  end=end-1;
-			  }
-		  return true;
+	 // get the total length of the words  
+    const len = string.length;  
+  
+    // Use for loop to divide the words into 2 half  
+    for (let i = 0; i < len / 2; i++) {  
+  
+        // validate the first and last characters are same  
+        if (string[i] !== string[len - 1 - i]) {  
+            alert( 'It is not a palindrome');  
+        }  
+    }  
+    alert( 'It is a palindrome');
+		  
 }
 module.exports = palindrome
