@@ -1,19 +1,17 @@
 // complete the given function
 
-function palindrome(str){
+function palindrome(s){
 
 	 // get the total length of the words  
-    const len = str.length;  
-  
-    // Use for loop to divide the words into 2 half  
-    for (let i = 0; i < len / 2; i++) {  
-  
-        // validate the first and last characters are same  
-        if (str[i] !== str[len - 1 - i]) {  
-            alert( 'It is not a palindrome');  
-        }  
-    }  
-    alert( 'It is a palindrome');
+  s = s.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+
+  // Check if the string is the same forwards and backwards
+  for (let i = 0; i < Math.floor(s.length / 2); i++) {
+    if (s[i] !== s[s.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
 		  
 }
 module.exports = palindrome
